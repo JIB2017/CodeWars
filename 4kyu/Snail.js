@@ -1,34 +1,3 @@
-// const snail = function (array) {
-//   // enjoy
-//   let result = [];
-
-//   // shift() para el primer elemento // RIGHT, UP
-//   // pop() para el ultimo elemento  // DOWN, LEFT
-
-//   while (array.length > 0) {
-
-//     // RIGHT
-//     result.push(...array.shift());
-
-//     // DOWN!!!!!
-//     for (let i = 0; i < array.length; i++) {
-//       result.push(array[i].pop());
-//     }
-
-//     // LEFT
-//     if (array.length > 0) {
-//       result.push(...array.pop().reverse());
-//     }
-
-
-//     // UP
-//     for (let i = array.length - 1; i >= 0; i--) {
-//       result.push(array[i].shift());
-//     }
-//   }
-//   return result;
-// };
-
 function snail(matrix) {
   let result = [];
 
@@ -43,14 +12,14 @@ function snail(matrix) {
 
     // toda la ultima fila
     if (matrix.length > 0) {
-      result.push(...matrix.pop());
+      result.push(...matrix.pop().reverse());
     }
     // toda la primer fila de nuevo
       for (let i = matrix.length - 1; i >= 0; i--) {
         result.push(matrix[i].shift());
       }
-
   }
+  return result;
 }
 
 const matriz = [
@@ -60,3 +29,4 @@ const matriz = [
 ];
 
 console.log(snail(matriz));
+// Resultado: [1,2,3,4,5,6,7,8,9]
